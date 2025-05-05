@@ -1,20 +1,19 @@
 const { MongoClient } = require("mongodb");
-
-const url = "";
+const username = "vigneshs9"
+const password = "Suthapalli@2002"
+const url = `mongodb+srv://${username}:${password}@vignesh.p5bvfjh.mongodb.net/?retryWrites=true&w=majority&appName=vignesh`;
 const client = new MongoClient(url);
-
-exports.connect = async (col) => {
-    try {
-        await client.connect();
-        console.log("Connected!!!");
-        const db = client.db('login');
-        const collection = db.collection(col);
-        const result = await collection.findOne({});
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        await client.close()
-    }
+let db;
+exports.connect = async () => {
+  try {
+    if(db != null) return db;
+    db = await client.connect();
+    console.log("Connected!!!");
+    return db;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    await client.close()
+  }
 }
 this.connect("mydata")
