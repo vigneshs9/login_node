@@ -5,5 +5,25 @@
     "express": "^5.1.0",
     "mongodb": "^6.16.0",
     "nodemon": "^3.1.10"
-  }
+  },
+  "name": "login_node",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vigneshs9/login_node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigneshs9/login_node/issues"
+  },
+  "homepage": "https://github.com/vigneshs9/login_node#readme",
+  "description": ""
 }
