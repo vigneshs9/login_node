@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const login = require('./login/index');
+const login = require('./login');
 
 router.use('/login', login);
 router.get('/health-check', (req, res) => {

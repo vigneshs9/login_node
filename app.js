@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 connectDB().then(() => {
-  app.use("/", routes);
+  app.use(routes);
   app.listen(PORT, () => {
     console.log(`port running on ${PORT}`);
   })
