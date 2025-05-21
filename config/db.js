@@ -1,9 +1,7 @@
 require('./constants');
 const { MongoClient, ObjectId } = require("mongodb");
 
-const username = "vigneshs9";
-const password = "Suthapalli%402002";
-const url = `mongodb+srv://${username}:${password}@vignesh.p5bvfjh.mongodb.net/?retryWrites=true&w=majority&appName=vignesh`;
+const url = `mongodb+srv://${USER_NAME}:${PASSWORD}@vignesh.p5bvfjh.mongodb.net/?retryWrites=true&w=majority&appName=vignesh`;
 const client = new MongoClient(url);
 let db;
 

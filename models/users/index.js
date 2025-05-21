@@ -1,19 +1,19 @@
 const mongo = require('../../config/db');
+const hashPassword = require('../../config/password_hashing');
 
 exports.addUser = async (params) => {
   try {
+    const password = await hashPassword.hashPassword(params['password'])
     const db = mongo.getDB();
     const insertObj = {
-      id: mongo.getId(),
       name: params['name'],
       email: params['email'],
-      password: params['password'],
-      confirm_password: params['confirm_password']
+      password: password,
     }
     await db.collection(USERS_COLLECTION).insertOne(insertObj);
     return;
   } catch (error) {
-    throw error;
+    throw new Error("Error while adding user");
   }
 }
 exports.getUser = async (params) => {
