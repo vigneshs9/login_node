@@ -18,4 +18,7 @@ router.route('/get_user').post([], (req, res) => {
   usersController.getUser(req, res);
 })
 
+router.route('/compare_password').post([], (req, res) => {
+  usersController.comparePassword(req, res);
+})
 module.exports = router;
