@@ -6,7 +6,7 @@ exports.addUser = async (req, res) => {
     await usersModel.addUser(params);
     res.status(200).json({ "status": true, "msg": "Record added successfully" });
   } catch (error) {
-    res.status(400).json({ "status": false, "error": [{ "msg": error.msg }] });
+    res.status(400).json({ "status": false, "error": [{"msg": error.msg}] });
   }
 }
 exports.getUser = async (req, res) => {
